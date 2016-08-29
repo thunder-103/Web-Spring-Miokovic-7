@@ -1,0 +1,128 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Miokovic-Spring-7</groupId>
+  <artifactId>Miokovic-Spring-7</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <properties>
+	<org.springframework.version>4.2.5.RELEASE</org.springframework.version>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>3.2.9.RELEASE</version>
+    </dependency>
+    <dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-config</artifactId>
+		<version>3.2.9.RELEASE</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-taglibs</artifactId>
+		<version>3.2.9.RELEASE</version>
+	</dependency>
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>jstl</artifactId>
+  		<version>1.2</version>
+  	</dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>2.5</version>
+	</dependency>
+  	<dependency>
+  		<groupId>com.h2database</groupId>
+  		<artifactId>h2</artifactId>
+  		<version>1.3.176</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+<!--   		<version>${org.springframework.version}</version> -->
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-webmvc</artifactId>
+<!--   		<version>${org.springframework.version}</version> -->
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-jdbc</artifactId>
+<!--   		<version>${org.springframework.version}</version> -->
+  	</dependency>
+  	
+  	<dependency>
+ 		<groupId>org.springframework</groupId>
+ 		<artifactId>spring-core</artifactId>
+<!--  		<version>${org.springframework.version}</version> -->
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+<!-- 	    <version>${org.springframework.version}</version> -->
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-expression</artifactId>
+<!-- 	    <version>${org.springframework.version}</version> -->
+	</dependency>
+  	
+  	<!-- http://stackoverflow.com/questions/11800638/cannot-find-commons-logging-class -->
+  	<dependency>
+	  <groupId>commons-logging</groupId>
+	  <artifactId>commons-logging</artifactId>
+	  <version>1.1.1</version>
+	  <scope>provided</scope>
+	</dependency>
+
+	<dependency>
+	  <groupId>org.slf4j</groupId>
+	  <artifactId>jcl-over-slf4j</artifactId>
+	  <version>1.7.21</version>
+	</dependency>
+  </dependencies>
+  
+<!--   http://docs.spring.io/spring-security/site/docs/3.2.6.RELEASE/reference/htmlsingle/#maven-bom -->
+<!-- http://stackoverflow.com/questions/31467915/which-spring-security-version-is-compatible-with-spring-3-2-8 -->
+  
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-framework-bom</artifactId>
+        <version>${org.springframework.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+</dependencyManagement>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
